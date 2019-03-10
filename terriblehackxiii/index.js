@@ -1,7 +1,7 @@
 var Sentiment = require('sentiment');
 var sentiment = new Sentiment();
 var result = sentiment.analyze('Cats are so stupid. Get rid of them.');
-console.dir(result);    // Score: -2, Comparative: -0.666
+//console.dir(result);    // Score: -2, Comparative: -0.666
 
 var text = 'Cats are so stupid. Get rid of them';
 var strt = 0;
@@ -10,7 +10,7 @@ var result = [];
 for (var i = 0; i <= text.length; i++) {
     if (text[i] === ' ') {
         end = i
-        console.dir(end);
+        //console.dir(end);
 
         var word = text.substring(strt, end);
         //Check for non letter included in the word
@@ -32,9 +32,9 @@ for (var i = 0; i <= text.length; i++) {
             }
         }
         score = sentiment.analyze(word).score;
-        console.dir(word + ' ' + score + ' ' + strt);
+        //console.dir(word + ' ' + score + ' ' + strt);
         result.push({strt,end,score})
         strt = i + 1;
-        console.dir(result);
+        //console.dir(result);
     }
 }
